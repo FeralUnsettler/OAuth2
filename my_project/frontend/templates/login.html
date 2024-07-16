@@ -1,0 +1,20 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Login</h2>
+<form action="{{ url_for('auth_login') }}" method="POST">
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email">
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password">
+    <button type="submit">Login</button>
+</form>
+<div>
+    <a href="{{ url_for('login', provider='google') }}">Login with Google</a>
+    <a href="{{ url_for('login', provider='github') }}">Login with GitHub</a>
+    <a href="{{ url_for('login', provider='facebook') }}">Login with Facebook</a>
+</div>
+{% endblock %}
+
+
